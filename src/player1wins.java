@@ -19,9 +19,9 @@ public class player1wins extends BasicGameState {
     }
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-       //img.draw(0,0);
-       g.setColor(Color.red);
-       g.drawString("player 1 wins", 100, 200);
+       img.draw(0,0);
+       //g.setColor(Color.red);
+       //g.drawString("player 1 wins", 100, 200);
     }
     
     public int getID() {

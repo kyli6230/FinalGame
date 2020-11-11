@@ -69,12 +69,9 @@ public class player {
 
     public void draw() {
         rocket.draw(hitbox.getX(), hitbox.getY());
-
     }
     
     public float getY(){
         return hitbox.getY();
     }
-    
-
 }
