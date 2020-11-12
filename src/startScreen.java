@@ -23,11 +23,6 @@ public class startScreen extends BasicGameState {
         if (in.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON)) {
             sbg.enterState(1, new FadeOutTransition(), new FadeInTransition());
         }
-        
-
-        /*
-       if (in.isKeyDown(Input.KEY_SPACE)){}
-         */
     }
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {

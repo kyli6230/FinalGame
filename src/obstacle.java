@@ -32,7 +32,7 @@ public class obstacle {
     public void move(){
         hitbox.setX(hitbox.getX() + 2);
         
-        //go back to front
+        //go back to start
         if (hitbox.getX() >= 800)
             hitbox.setX(-150);
     }

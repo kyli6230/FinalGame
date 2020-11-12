@@ -19,7 +19,6 @@ public Sounder(String f){
 
 public void play(){
     sound.start();
-   
 }
 
 public void reset(){

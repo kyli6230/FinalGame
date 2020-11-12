@@ -7,17 +7,19 @@ public class Countdown {
    private int timer;
    
    public Countdown () throws SlickException{
+       //initializing the photos
         one = new Image ("images/one.png");
         two = new Image ("images/two.png");
         three = new Image ("images/three.png");
         go = new Image ("images/go.png");
         timer=400;
-        active = three;
+        active = three; //one active photo for the different images
     }
    
    public void draw(){
-       timer = timer >0? timer-1: 0;
+       timer = timer >0? timer-1: 0; //stop timer at 0
        
+       //countdown changing the images
        if(timer >=300)
            active = three;
        else if(timer>=200)

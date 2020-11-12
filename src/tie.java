@@ -20,8 +20,6 @@ public class tie extends BasicGameState {
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
        img.draw(0,0);
-       //g.setColor(Color.red);
-       //g.drawString("you tie", 100, 200);
     }
     
     public int getID() {

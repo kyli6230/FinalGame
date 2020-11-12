@@ -21,17 +21,17 @@ public class mainGame extends BasicGameState {
     ArrayList<obstacle> rocks;
     int timer, score1 = 0, score2 = 0;
     Color pink;
-    player one;
-    player two;
+    player one, two;
     Countdown c;
-    Sounder s;
-    Sounder d;
+    Sounder s, d;
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-       
+       //music and sounds
         s = new Sounder("backgroundmusic.wav");
         d = new Sounder("crash.wav");
         s.play();
+        
+        //
         rocks = new ArrayList();
         timer = 2000;
         obstacle.setGameSize(800, 600);
@@ -39,6 +39,7 @@ public class mainGame extends BasicGameState {
         two = new player(600,525,1);
         c = new Countdown();
         pink = new org.newdawn.slick.Color (196, 0, 151);
+        
         //locations of the rocks
         int rockloc[][] = {
             {-480, 50},
@@ -70,6 +71,7 @@ public class mainGame extends BasicGameState {
             {-835, 190},
             {-795, 370},
             {-880, 100}};
+        
         //placing the locations to the rocks
         for (int i = 0; i < rockloc.length; i++) {
             rocks.add(new obstacle(rockloc[i][0],rockloc[i][1]));
@@ -80,6 +82,7 @@ public class mainGame extends BasicGameState {
         for (obstacle a : rocks) {
             a.move();
         }
+        
         //did it crash
         for (obstacle a : rocks) {
             if (a.hit(one.getHitBox())) {
@@ -88,7 +91,6 @@ public class mainGame extends BasicGameState {
                 d.reset();
             }
         }
-        
         for (obstacle a : rocks) {
             if (a.hit(two.getHitBox())) {
                 d.play();
@@ -96,6 +98,7 @@ public class mainGame extends BasicGameState {
                 d.reset();
             }
         }
+        
         //can't move until countdown is finished
         if (c.getTime() == 0)
             one.move(gc);
@@ -130,8 +133,8 @@ public class mainGame extends BasicGameState {
             a.draw();
         }
         
-        one.draw();
-        two.draw();
+        one.draw(0);
+        two.draw(1);
         
         //score board
         g.setColor (pink);
